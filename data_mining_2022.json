@@ -120,29 +120,23 @@
             "marks": 4,
             "CO": "CO3"
         },
+         {
+            "question_number": "Q5a",
+            "question_text": "Explain the concept of 'Cluster Validity'. What are the main objectives for validating clusters?",
+            "marks": 4,
+            "CO": "CO2"
+        },
         {
-            "question_number": "Q5",
-            "question_text": "Attempt any 2 parts of the following.",
-            "sub_questions": [
-                {
-                    "sub_question_number": "5a",
-                    "sub_question_text": "Explain the concept of 'Cluster Validity'. What are the main objectives for validating clusters?",
-                    "marks": 4,
-                    "CO": "CO2"
-                },
-                {
-                    "sub_question_number": "5b",
-                    "sub_question_text": "Differentiate between hierarchical clustering and partitional clustering.",
-                    "marks": 4,
-                    "CO": "CO4"
-                },
-                {
-                    "sub_question_number": "5c",
-                    "sub_question_text": "Explain any one method to measure the quality of clustering solutions.",
-                    "marks": 4,
-                    "CO": "CO3"
-                }
-            ]
+            "question_number": "Q5b",
+            "question_text": "Differentiate between hierarchical clustering and partitional clustering.",
+            "marks": 4,
+            "CO": "CO4"
+        },
+        {
+            "question_number": "Q5c",
+            "question_text": "Explain any one method to measure the quality of clustering solutions.",
+            "marks": 4,
+            "CO": "CO3"
         }
     ]
 }
