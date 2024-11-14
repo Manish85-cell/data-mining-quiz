@@ -1,0 +1,148 @@
+{
+    "subject": "Data Mining",
+    "year": "2022",
+    "course_code": "COCSC16/CDCSC16",
+    "questions": [
+        {
+            "question_number": "Q1a",
+            "question_text": "Explain various stages of data mining with diagram.\nMarks of 10 students in Data Mining subject are given as follows: 78, 51, 86, 91, 33, 27, 25, 46, 55, 59. Calculate normalized values of these using Min-Max normalization.",
+            "marks": "2+2",
+            "CO": "CO1+CO3"
+        },
+        {
+            "question_number": "Q1b",
+            "question_text": "Given the confusion matrix below, (a) Calculate the accuracy. Is this a good result? Why? (b) Explain 3 alternative performance measures to support your opinion.",
+            "table": {
+                "headers": ["True fraud", "True non-fraud"],
+                "rows": [
+                    ["Predicted fraud", 1, 4],
+                    ["Predicted non-fraud", 9, 986]
+                ]
+            },
+            "marks": "2+2",
+            "CO": "CO2+CO4"
+        },
+        {
+            "question_number": "Q1c",
+            "question_text": "Regression. Given the graph below, predict y by x, if MAE < 0.75 then it's a good result. Use one sentence for each regression method to explain whether it would have good results or not.\n(a) KNN for regression, k=3\n(b) binary tree regression\n(c) linear regression\n(d) local regression, k=3\n(e) local regression, k=20",
+            "marks": 4,
+            "CO": "CO4"
+        },
+        {
+            "question_number": "Q2a",
+            "question_text": "What do you mean by a factless fact table in the context of data warehousing? Differentiate between fact table and dimension table.",
+            "marks": 4,
+            "CO": "CO3"
+        },
+        {
+            "question_number": "Q2b",
+            "question_text": "Price of a few items in a store is given as follows. Calculate Dissimilarity matrix for this.",
+            "table": {
+                "headers": ["Object No", "Price"],
+                "rows": [
+                    [1, 28],
+                    [2, 45],
+                    [3, 64],
+                    [4, 93],
+                    [5, 59],
+                    [6, 67],
+                    [7, 38]
+                ]
+            },
+            "marks": 4,
+            "CO": "CO2+CO4"
+        },
+        {
+            "question_number": "Q2c",
+            "question_text": "Predict that an Average build person having high Weight, having good experience and having fair performance will win in wrestling or not.",
+            "marks": 4,
+            "CO": "CO3"
+        },
+        {
+            "question_number": "Q3a",
+            "question_text": "Explain following with one example with respect to itemset mining:\nA. Frequent itemset\nB. Minimum support\nC. Histogram\nD. Interesting measures",
+            "marks": 4,
+            "CO": "CO1+CO5"
+        },
+        {
+            "question_number": "Q3b",
+            "question_text": "Trace the results of using the Apriori algorithm on the grocery store example with support threshold 33.34% and confidence threshold 60%. Show the candidate and frequent itemsets for each database scan. Enumerate all the final frequent itemsets. Also indicate the association rules that are generated and highlight the strong ones, sort them by confidence.",
+            "table": {
+                "headers": ["Transaction ID", "Items"],
+                "rows": [
+                    ["T1", "HotDogs, Buns, Ketchup"],
+                    ["T2", "HotDogs, Buns"],
+                    ["T3", "HotDogs, Coke, Chips"],
+                    ["T4", "Chips, Coke"],
+                    ["T5", "Chips, Ketchup"],
+                    ["T6", "HotDogs, Coke, Chips"]
+                ]
+            },
+            "marks": 8,
+            "CO": "CO2"
+        },
+        {
+            "question_number": "Q3c",
+            "question_text": "Use the following transactional data with support threshold-3:\nT1: (B,K,M,N,O,Y)\nT2: (D,E,K,N,O,Y)\nT3: (A,E,K,M)\nT4: (C,K,M,U,Y)\nT5: (C,E,I,K,O,O)\n(a) Build a frequent pattern tree (FP-Tree). Show for each transaction how the tree evolves.\n(b) Use FP-Growth to discover the frequent itemsets from this FP-tree.",
+            "marks": 8,
+            "CO": "CO2"
+        },
+        {
+            "question_number": "Q4a",
+            "question_text": "Given a decision tree, you have the option of (a) converting the decision tree to rules and then pruning the resulting rules, or (b) pruning the decision tree and then converting the pruned tree to rules. What advantage does (a) have over (b)?",
+            "marks": 4,
+            "CO": "CO2"
+        },
+        {
+            "question_number": "Q4b",
+            "question_text": "State 2 differences and 2 similarities between bagging and boosting. Suppose you are given 'n' predictions on test data by 'n' different models (M1, M2,... Mn) respectively. Which method(s) can be used to combine the predictions of these models?",
+            "marks": "2+2",
+            "CO": "CO2+CO4"
+        },
+        {
+            "question_number": "Q4c",
+            "question_text": "Dataset collected for weather information over a course of period is given below. Using the ID3 algorithm calculate the outcome.",
+            "table": {
+                "headers": ["Build", "Weight", "Experience", "Performance", "Win"],
+                "rows": [
+                    ["Average", "High", "Moderate", "Excellent", "Yes"],
+                    ["Normal", "Low", "Moderate", "Fair", "No"],
+                    ["Good", "Medium", "Good", "Fair", "No"],
+                    ["Good", "High", "Moderate", "Fair", "Yes"],
+                    ["Average", "High", "Moderate", "Excellent", "Yes"],
+                    ["Normal", "Medium", "Good", "Fair", "No"],
+                    ["Normal", "High", "Moderate", "Excellent", "Yes"],
+                    ["Average", "Low", "Good", "Fair", "No"],
+                    ["Normal", "Medium", "Good", "Fair", "No"],
+                    ["Average", "High", "Moderate", "Excellent", "No"]
+                ]
+            },
+            "marks": 4,
+            "CO": "CO3"
+        },
+        {
+            "question_number": "Q5",
+            "question_text": "Attempt any 2 parts of the following.",
+            "sub_questions": [
+                {
+                    "sub_question_number": "5a",
+                    "sub_question_text": "Explain the concept of 'Cluster Validity'. What are the main objectives for validating clusters?",
+                    "marks": 4,
+                    "CO": "CO2"
+                },
+                {
+                    "sub_question_number": "5b",
+                    "sub_question_text": "Differentiate between hierarchical clustering and partitional clustering.",
+                    "marks": 4,
+                    "CO": "CO4"
+                },
+                {
+                    "sub_question_number": "5c",
+                    "sub_question_text": "Explain any one method to measure the quality of clustering solutions.",
+                    "marks": 4,
+                    "CO": "CO3"
+                }
+            ]
+        }
+    ]
+}
