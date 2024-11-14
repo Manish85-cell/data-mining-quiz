@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .progress {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+            display: none;
+        }
+        .button {
+            padding: 10px 15px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .quiz-type {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Data Mining Quiz</h1>
+    <div class="quiz-type">
+        <button class="button" onclick="startQuiz('single')">1-Question Quiz</button>
+        <button class="button" onclick="startQuiz('three')">3-Question Quiz</button>
+        <button class="button" onclick="startQuiz('complete')">Complete PYQ Quiz</button>
+    </div>
+    <div class="progress" id="progress"></div>
+    <div id="questionArea" class="question"></div>
+    <button class="button" id="nextButton" style="display:none;">Next Question</button>
+    <div class="feedback" id="feedback"></div>
+</div>
+
+<script>
+let questions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+
+// Fetch questions from the external JSON file
+fetch('data_mining_2022.json')
+    .then(response => response.json())
+    .then(data => {
+        questions = data.questions; // Load questions from the JSON file
+    })
+    .catch(error => console.error('Error loading the questions:', error));
+
+function startQuiz(type) {
+    if (type === 'single') {
+        questions = [getRandomQuestion(questions)]; // Random single question
+    } else if (type === 'three') {
+        questions = getRandomQuestions(questions, 3); // Random three questions
+    } else if (type === 'complete') {
+        // Use all questions loaded from JSON
+        // No change needed, questions are already set globally
+    }
+
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById('nextButton').style.display = 'block';
+    document.getElementById('feedback').style.display = 'none';
+    displayQuestion();
+}
+
+function getRandomQuestion(questionsArray) {
+    const randomIndex = Math.floor(Math.random() * questionsArray.length);
+    return questionsArray[randomIndex];
+}
+
+function getRandomQuestions(questionsArray, numQuestions) {
+    const shuffled = questionsArray.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, Math.min(numQuestions, questionsArray.length));
+}
+
+function displayQuestion() {
+    const question = questions[currentQuestionIndex];
+    let questionHtml = `<strong>Question ${currentQuestionIndex + 1}:</strong> ${question.question_text}<br>`;
+
+    if (question.table) {
+        questionHtml += `<table border="1"><tr>${question.table.headers.map(header => `<th>${header}</th>`).join('')}</tr>`;
+        question.table.rows.forEach(row => {
+            questionHtml += `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`;
+        });
+        questionHtml += `</table>`;
+    }
+
+    document.getElementById('questionArea').innerHTML = questionHtml;
+    document.getElementById('progress').innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    document.getElementById('feedback').style.display = 'none';
+}
+
+document.getElementById('nextButton').addEventListener('click', () => {
+    // Simulating scoring (for demonstration purposes)
+    score++;
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        document.getElementById('feedback').innerText = `Quiz completed! Your score: ${score}/${questions.length}`;
+        document.getElementById('nextButton').style.display = 'none'; // Hide next button
+    }
+});
+</script>
+
+</body>
+</html>
